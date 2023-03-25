@@ -1,46 +1,56 @@
-function cpuElec() {
-    return Math.floor(Math.random() * 3) + 1;
-}
-function accion(x,y){
-    switch (x){
-    case 1:
-    document.write("<br>Eligio Piedra");
-    break;
-    case 2:
-    document.write("<br>Eligio Papel");
-    break;
-    case 3:
-    document.write("<br>Eligio Tijera");
-    break;
-}   switch (y){
-    case 1:
-    document.write("<br>El cpu eligio Piedra");
-    break;
-    case 2:
-    document.write("<br>El cpu eligio Papel");
-    break;
-    case 3:
-    document.write("<br>El cpu eligio Tijera");
-    break;
-}
-}
-function ganador(n,x){
-    if((n===1 && x==3)||(n===2 && x===1)||(n===3 && x===2)){
-    document.write("<br>Ganaste");
-}else if((n===1 && x==2)||(n===2 && x===3)||(n===3 && x===1)){
-        document.write("<br>Gana el cpu");
-    }else if((n===1 && x===1)||(n=== 2&& x===2)||(x==3 && x===3)){
-        document.write("<br>Empate");
-        }
-    
-}
+// Obtener los botones por su ID
+const botonPiedra = document.getElementById("piedra");
+const botonPapel = document.getElementById("papel");
+const botonTijera = document.getElementById("tijera");
+const botonLimpiar= document.getElementById("limpiar");
 
-alert("Ingresa un numero segun tu accion");
-let numero = parseInt(prompt("1: Piedra // 2: Papel // 3: Tijera"));
-if(numero>0 && numero<4){
-let cpu= cpuElec();
-accion(numero,cpu);
-ganador(numero,cpu);
-}else {
-    alert("Numero incorrecto, ingrese un numero valido");
+// Agregar un evento de clic a cada botón
+botonPiedra.addEventListener("click", function() {
+  jugar(1);
+});
+
+botonPapel.addEventListener("click", function() {
+  jugar(2);
+});
+
+botonTijera.addEventListener("click", function() {
+  jugar(3);
+});
+
+botonLimpiar.addEventListener("click",function(){
+    borrar();
+})
+
+// Función para jugar
+function jugar(seleccionUsuario) {
+  // Generar una selección aleatoria para el CPU (1 = Piedra, 2 = Papel, 3 = Tijera)
+  const seleccionCPU = Math.floor(Math.random() * 3) + 1;
+
+  // Comprobar el resultado del juego
+  if (seleccionUsuario === seleccionCPU) {
+    console.log("Empate");
+    var elemento = document.getElementById("empate");
+    elemento.style.display = "block";
+   
+} else if ((seleccionUsuario === 1 && seleccionCPU === 3) ||
+             (seleccionUsuario === 2 && seleccionCPU === 1) ||
+             (seleccionUsuario === 3 && seleccionCPU === 2)) {
+    console.log("Ganaste");
+    var elemento = document.getElementById("ganaste");
+    elemento.style.display = "block";
+   
+  } else {
+    console.log("Perdiste");
+    var elemento = document.getElementById("perdiste");
+    elemento.style.display = "block";
+   
+  }
+}
+function borrar(){
+    var elemento = document.getElementById("ganaste");
+    elemento.style.display = "none";
+    var elemento = document.getElementById("empate");
+    elemento.style.display = "none";
+    var elemento = document.getElementById("perdiste");
+    elemento.style.display = "none";
 }

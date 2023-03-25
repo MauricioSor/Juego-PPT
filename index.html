@@ -4,16 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <meta name="author" content="Mauricio Soria">
     <meta name="keywords" content="Juego,Argentina,Piedra,Papel o tijera">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Juega</title>
 </head>
-<body>
-<main>
-    <img id="fondo" src="src/_128046769_mediaitem128046768.jpg.crdownload" alt="Muchaaachoooss">
-    <audio src="./src/X2Download.app - Muchachos, ahora nos volvimos a ilusionar (128 kbps).mp3" autoplay></audio>
+<body> 
+    <main>
+        <audio id="miAudio" src="./src/X2Download.app - Muchachos, ahora nos volvimos a ilusionar (128 kbps).mp3" autoplay></audio>
+    <div class="container-fluid ">
+        <div class="row">
+            <div id="celeste" class="container d-flex flex-column flex-wrap">
+            <img class="bg-image" src="./src/79288_imagen_1227x747xrecortarxagrandar.jpg" height="" alt="">
+            <img class="bg-image" src="./src/HD-wallpaper-fifa-world-cup-2022-qatar-winner.jpg" height="" alt="">
+            <img class="bg-image" src="./src/HD-wallpaper-obelisco-de-buenos-aires-monument-square-buenos-aires-plaza-de-la-republica-obelisk-of-buenos-aires-argentina-buenos-aires-cityscape-panorama.jpg" height="" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="jugador">
+        <div class="seleccion">
+            <h2 class="text-center"> Elija una accion:</h2>
+            <button type="button" id="piedra"  class="btn">
+                <img  class="manos manos-jugador" src="./src/manos/hand-2704013_1280.jpg" alt="">
+            </button>
+            <button type="button" id="papel"   class="btn">
+                <img  class="manos manos-jugador" src="./src/manos/mano-femenina-que-muestra-dos-fingeres-en-el-símbolo-o-las-tijeras-de-paz-132008626.jpg" alt="">
+            </button>
+            <button type="button" id="tijera"  class="btn">
+                <img  class="manos manos-jugador" src="./src/manos/tijeras-de-papel-de-la-roca-mano-de-papel-31662022.jpg" alt="">
+            </button>
+        </div>
+    </div>
+    <div class="cpu">
+            <div class="seleccion-cpu">
+                <h2 class="text-center"> CPU:</h2>
+                <button type="button" class="btn">
+                    <img class="manos" src="./src/manos/hand-2704013_1280.jpg" alt="">
+                </button>
+                <button type="button" class="btn">
+                    <img class="manos" src="./src/manos/mano-femenina-que-muestra-dos-fingeres-en-el-símbolo-o-las-tijeras-de-paz-132008626.jpg" alt="">
+                </button>
+                <button type="button" class="btn">
+                    <img class="manos" src="./src/manos/tijeras-de-papel-de-la-roca-mano-de-papel-31662022.jpg" alt="">
+                </button>
+            </div>
+    </div>
+<button id="limpiar">Limpiar</button>
+ <h1 id="letrasMedio">Vs.</h1> 
+ <h1 id="ganaste">¡Ganaste!</h1>
+ <h1 id="empate">Empate</h1>
+ <h1 id="perdiste">¡Perdiste!</h1>
 </main>
-<script src="js/logic.j"></script>
+<script src="js/logic.js"></script>
 </body>
 </html>

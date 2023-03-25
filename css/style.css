@@ -1,11 +1,83 @@
-body {
-    background-color:aqua;
+
+#celeste{
+    background-color: aqua;
+    
+}
+.bg-image{
+    opacity: 50% ;
+    height: 380px;
+    object-fit: cover;
+}
+.seleccion{
+position: absolute;
+right: 60%;
+top: 50%;
+}
+.cpu{
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    }
+.manos{
+height: 100px;
+width: 100px;
+}
+.manos-jugador:hover {
+transform: scale(1.4);
+}
+#letrasMedio{
+position: absolute;
+left: 50%;
+right: 50%;
+bottom: 33%;
+z-index: 5;
+font-size: 100px;
+color: yellow;
+box-shadow: 100%;
+border: 1px red;
+}
+#ganaste{
+    display: none;
+    position: absolute;
+    left: 20%;
+    top: 35%;
+    z-index: 10;
+    color: aqua;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+    font-size: 300px;
+}
+#empate{
+display: none;
+position: absolute;
+left: 22%;
+top: 35%;
+z-index: 10;
+color: aqua;
+text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+font-size: 300px;
+}
+#perdiste{
+   display:none;
+   position: absolute;
+   left: 20%;
+   top: 35%;
+   z-index: 10;
+   color: aqua;
+   text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+   font-size: 300px; 
+}
+#limpiar{
+    position: absolute;
+    top: 90%;
+    right: 45%;
 }
 
-#fondo {
-    opacity: 60%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    object-fit: cover;
+@media screen and (max-width:412px){
+    #jugador, #cpu{
+        position: absolute;
+        right: 50%;
+        top: 50%;
+    }
+
+
 }

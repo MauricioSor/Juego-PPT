@@ -1,7 +1,12 @@
 
+body{
+}
+
+#fondo{
+max-height: 100vh;
+}
 #celeste{
     background-color: aqua;
-    
 }
 .bg-image{
     opacity: 50% ;
@@ -66,12 +71,19 @@ font-size: 300px;
    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
    font-size: 300px; 
 }
-#limpiar{
+#limpiar {
     position: absolute;
     top: 90%;
     right: 45%;
 }
-
+#mute,#play{
+    position: absolute;
+    top: 90%;
+    right: 55%;
+}
+#mute{
+display: none;
+}
 @media screen and (max-width:412px){
     #jugador, #cpu{
         position: absolute;
